@@ -1,5 +1,5 @@
 ---
-title: "Pertemuan 1 - Pemulusan"
+title: "Pertemuan 1 - Pemulusan Data"
 author:Akmal Basis Jatining Kusumah
 output:
   html_document: default
