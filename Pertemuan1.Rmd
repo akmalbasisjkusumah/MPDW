@@ -84,8 +84,9 @@ Menyimpan plot
 
 ```{r}
 #menyimpan plot
-#dev.copy(png, "eksplorasi.png")
-#dev.off()
+library(graphics)
+png ("eksplorasii.png")
+dev.off()
 ```
 
 ## Single Moving Average & Double Moving Average
