@@ -24,7 +24,7 @@ library("TSA")
 
 ```{r}
 library(rio)
-data <- import("https://raw.githubusercontent.com/akmalbasisjkusumah/MPDW/main/Pertemuan%201/Dataset%20Tugas%201.csv")
+data <- import("https://raw.githubusercontent.com/akmalbasisjkusumah/MPDW/main/Data/Dataset%20Tugas%201.csv")
 data
 ```
 
