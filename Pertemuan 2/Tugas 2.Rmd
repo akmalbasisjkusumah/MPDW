@@ -80,7 +80,7 @@ Setalah mengetahui adanya hubungan antar dua peubah, maka model regresi dapat di
 ```{r}
 #Pembuatan Model Regresi
 #model regresi
-model<- forecast::tslm(Y~V2+V3, data = data.ts)
+model<- lm(Y~V2+V3, data = data.ts)
 summary(model)
 anova(model)
 ```
