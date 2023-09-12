@@ -1,8 +1,6 @@
 ---
 title: "Pertemuan 2 - Regresi"
-author:
-- Adelia Putri Pangestika
-- Muhammad Rizky Nurhambali
+author: Akmal Basis Jatining Kusumah
 output:
   pdf_document: default
   word_document: default
@@ -28,7 +26,7 @@ library(HoRM) #untuk membuat model regresi Hildreth-Lu
 Data yang digunakan dalam kesempatan kali ini adalah data IPM Provinsi Gorontalo periode tahun 2010-2021.
 
 ```{r}
-data <- read.csv("C:/Users/ASUS/Documents/Kuliah/Semester 5/Metode Peramalam Deret Waktu/Praktikum/MPDW/Yearly-test.csv")
+data <- read.csv("https://raw.githubusercontent.com/akmalbasisjkusumah/MPDW/main/Pertemuan%202/Yearly-test.csv")
 data
 ```
 
@@ -38,12 +36,11 @@ cor(data[-1])
 
 ```{r}
 Y <- data$V5
-tahun <- data$V1
 V2 <- data$V2
 V3 <- data$V3
 
-dt <- cbind(tahun,ipm)
-dt <- as.data.frame(dt)
+dt <- cbind.data.frame(Y, V2, V3)
+dt <- dt[2000:2128,]
 dt
 ```
 
@@ -53,11 +50,11 @@ Sebelum melakukan regresi, akan diperlihatkan *plot time-series* dari IPM Provin
 
 ```{r}
 #Membentuk objek time series
-data.ts<-ts(dtGorontalo$ipm)
+data.ts<-ts(dt)
 data.ts
 
 #Membuat plot time series
-ts.plot(data.ts, xlab="Time Period ", ylab="IPM", main= "Time Series Plot of IPM")
+ts.plot(data.ts, xlab="Time Period ", ylab="V5", main= "Time Series Plot")
 points(data.ts)
 ```
 
