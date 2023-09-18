@@ -213,7 +213,7 @@ Berdasarkan akurasi di atas, terlihat bahwa nilai MAPE sangat kecil sehingga dap
 model.ardl.opt <- ardlBoundOrders(data = data.frame(data), ic = "AIC", 
                                   formula = AQI ~ o3 )
 min_p=c()
-for(i in 1:14){
+for(i in 1:10){
   min_p[i]=min(model.ardl.opt$Stat.table[[i]])
 }
 q_opt=which(min_p==min(min_p, na.rm = TRUE))
