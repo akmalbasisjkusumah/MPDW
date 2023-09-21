@@ -20,7 +20,7 @@ Pembangkitan data berpola AR, MA, ARMA, dan banyak proses deret waktu lainnya di
 *White noise* dibangkitkan dari suatu peubah acak, umumnya peubah acak normal.
 
 ```{r}
-wn <- rnorm(300)
+wn <- rnorm(200)
 ts.plot(wn)
 ```
 
