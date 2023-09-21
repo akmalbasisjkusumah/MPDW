@@ -1,3 +1,15 @@
+---
+title: "Pertemuan 4 - Model AR, MA, ARMA"
+author: Akmal Basis Jatining Kusumah
+output:
+  html_document:
+    theme: yeti
+    toc: true
+    toc_float: true
+  word_document: default
+  pdf_document: default
+---
+
 ## Pembangkitan Proses MA(2)
 
 Akan dicoba membangkitkan proses MA, yaitu MA(2) dengan $\theta_1 = 0.4$ dan $\theta_2 = 0.6$ sebanyak 200 observasi dan $c=0$. Karena diperlukan satu nilai awal untuk $e_{t-1}$, masukkan nilai pertama white noise sebagai nilai awal tersebut.
@@ -183,7 +195,7 @@ Berdasarkan plot time series tersebut terlihat bahwa data cenderung stasioner pa
 ```{r}
 par(mfrow = c(1,2))
 acf(ar)
-acf(ar1)
+acf(ar2)
 ```
 
 Berdasarkan plot ACF tersebut terlihat bahwa plot ACF cenderung *tails off* dan cenderung untuk menurun dengan perlahan.
@@ -193,7 +205,7 @@ Berdasarkan plot ACF tersebut terlihat bahwa plot ACF cenderung *tails off* dan 
 ```{r}
 par(mfrow =c(1,2))
 pacf(ar)
-pacf(ar1)
+pacf(ar2)
 ```
 
 Berdasarkan plot PACF tersebut, terlihat bahwa plot PACF *cuts off* pada lag pertama.
@@ -202,7 +214,7 @@ Berdasarkan plot PACF tersebut, terlihat bahwa plot PACF *cuts off* pada lag per
 
 ```{r}
 TSA::eacf(ar)
-TSA::eacf(ar1)
+TSA::eacf(ar2)
 ```
 
 Berdasarkan pola segitiga nol pada plot EACF, terlihat bahwa segitiga nol berada pada ordo AR(2) dan ordo MA(0)
@@ -387,7 +399,7 @@ Berdasarkan plot PACF tersebut, terlihat bahwa model ARMA(2,2) hasil simulasi me
 ```{r}
 TSA::eacf(arrma)
 TSA::eacf(y.arma)
-TSA::eacf(arma11)
+TSA::eacf(arma22)
 ```
 
 
