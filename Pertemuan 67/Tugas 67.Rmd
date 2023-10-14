@@ -536,3 +536,5 @@ colnames(perbandingan.da)<-c("Aktual","Hasil Forecast")
 perbandingan.da
 accuracy(ts(hasil[-1]), head(test.ts, n=30))
 ```
+
+Hello
