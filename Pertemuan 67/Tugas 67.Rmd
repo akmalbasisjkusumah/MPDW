@@ -307,7 +307,7 @@ Berdasarkan uji ADF tersebut, didapat *p-value* sebesar 0.5553 yang lebih besar 
 
 ```{r}
 index <- seq(1:430)
-bc = boxcox(train.ts~index, lambda = seq(5,10,by=1))
+bc = MASS::boxcox(train.ts~index, lambda = seq(5,8,by=1))
 #Nilai Rounded Lambda
 lambda <- bc$x[which.max(bc$y)]
 lambda
