@@ -53,9 +53,9 @@ Dapat kita lihat data memiliki pola tren menurun
 ## Split Data
 
 ```{r}
-train1 <- tsdat[1:118]
+train1 <- stas[1:118]
 head(train1)
-test <- tsdat[119:128]
+test <- stas[119:128]
 head(test)
 ```
 
