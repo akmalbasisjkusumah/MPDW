@@ -205,7 +205,8 @@ Berdasarkan plot kuantil-kuantil normal, secara eksplorasi ditunjukkan sisaan me
 
 ```{r}
 #1) Sisaan Menyebar Normal
-ks.test(sisaan,"pnorm") 
+shapiro.test(sisaan)
+nortest::ad.test(sisaan)
 #tak tolak H0 > sisaan menyebar normal
 ```
 
