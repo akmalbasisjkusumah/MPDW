@@ -283,12 +283,14 @@ $$
 ses.1 <- ses(train.ts, h = 25, alpha = 0.2)
 plot(ses.1)
 ses.1
+ramalan1 <- forecast(ses.1, h=25)
 dev.copy(png, "Plot SES (alpha = 0,2).png")
 dev.off()
 
 ses.2<- ses(train.ts, h = 25, alpha = 0.7)
 plot(ses.2)
 ses.2
+ramalan2 <- forecast(ses.2, h=25)
 dev.copy(png, "Plot SES (alpha = 0,7.png")
 dev.off()
 ```
@@ -338,8 +340,8 @@ Perhitungan akurasi data dapat dilakukan dengan cara langsung maupun manual. Sec
 ```{r}
 #Keakuratan Metode
 #Pada data training
-SSE1<-ses.1$SSE
-MSE1<-ses.1$SSE/length(train.ts)
+SSE1<-sum(ses.1$residuals^2)
+MSE1<-sum(ses.1$residuals^2)/length(train.ts)
 RMSE1<-sqrt(MSE1)
 
 akurasi1 <- matrix(c(SSE1,MSE1,RMSE1))
@@ -347,8 +349,8 @@ row.names(akurasi1)<- c("SSE", "MSE", "RMSE")
 colnames(akurasi1) <- c("Akurasi lamda=0.2")
 akurasi1
 
-SSE2<-ses.2$SSE
-MSE2<-ses.2$SSE/length(train.ts)
+SSE2<-sum(ses.2$residuals^2)
+MSE2<-sum(ses.2$residuals^2)/length(train.ts)
 RMSE2<-sqrt(MSE2)
 
 akurasi2 <- matrix(c(SSE2,MSE2,RMSE2))
@@ -509,16 +511,9 @@ SSEtestingdes2<-sum(selisihdes2^2)
 MSEtestingdes2<-SSEtestingdes2/length(testing$`Harga_Beras`)
 MAPEtestingdes2<-sum(abs(selisihdes2/testing$`Harga_Beras`)*100)/length(testing$`Harga_Beras`)
 
-selisihdesopt<-ramalandesopt$mean-testing$`Harga_Beras`
-selisihdesopt
-
-SSEtestingdesopt<-sum(selisihdesopt^2)
-MSEtestingdesopt<-SSEtestingdesopt/length(testing$`Harga_Beras`)
-MAPEtestingdesopt<-sum(abs(selisihdesopt/testing$`Harga_Beras`)*100)/length(testing$`Harga_Beras`)
-
 akurasitestingdes <-
   matrix(c(SSEtestingdes1,MSEtestingdes1,MAPEtestingdes1,SSEtestingdes2,MSEtestingdes2,
-           MAPEtestingdes2,SSEtestingdesopt,MSEtestingdesopt,MAPEtestingdesopt),
+           MAPEtestingdes2),
          nrow=3,ncol=3)
 row.names(akurasitestingdes)<- c("SSE", "MSE", "MAPE")
 colnames(akurasitestingdes) <- c("des ske1","des ske2","des opt")
