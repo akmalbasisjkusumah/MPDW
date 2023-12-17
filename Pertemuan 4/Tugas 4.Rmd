@@ -1,8 +1,8 @@
 ---
 title: "AR-MA manual"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 date: "2023-09-16"
 ---
 
