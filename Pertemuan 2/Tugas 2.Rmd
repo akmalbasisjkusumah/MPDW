@@ -2,12 +2,12 @@
 title: "Pertemuan 2 - Regresi"
 author: Akmal Basis Jatining Kusumah
 output:
-  pdf_document: default
-  word_document: default
   html_document:
     theme: yeti
     toc: true
     toc_float: true
+  word_document: default
+  pdf_document: default
 ---
 
 ## Pemanggilan *Packages*
